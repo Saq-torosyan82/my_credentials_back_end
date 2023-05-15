@@ -19,10 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login',[UserController::class, 'loginUser']);
+Route::post('login', [UserController::class, 'loginUser']);
 
 
 Route::group(['middleware' => 'auth:sanctum'],function(){
-    Route::get('user',[UserController::class, 'userDetails']);
+    Route::get('user', [UserController::class, 'userDetails']);
     Route::post('logout',[UserController::class,'logout']);
 });
